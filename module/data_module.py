@@ -71,7 +71,8 @@ def _get_yfinance_prices(symbol: str, start_date: str, end_date: str) -> pd.Seri
 
 def _get_futu_prices(futu_code: str, start_date: str, end_date: str, host: str = FUTU_HOST, port: int = FUTU_PORT, quote_ctx=None) -> pd.Series:
     """从富途 request_history_kline 获取日 K 收盘价序列，前复权。"""
-    from futu import OpenQuoteContext, RET_OK, KLType, AuType
+    from futu.quote.open_quote_context import OpenQuoteContext
+    from futu.common.constant import RET_OK, KLType, AuType
 
     own_ctx = quote_ctx is None
     if own_ctx:

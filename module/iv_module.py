@@ -132,7 +132,8 @@ def get_futu_iv(
         - sigma2_by_dte: [(dte, sigma2), ...]（vix_style 时）
         - interp_dtes, interp_weights, method, error
     """
-    from futu import OpenQuoteContext, RET_OK, SubType
+    from futu.quote.open_quote_context import OpenQuoteContext
+    from futu.common.constant import RET_OK, SubType
 
     out = {"iv_annual_pct": None, "spot": None, "iv_by_dte": [], "sigma2_by_dte": [], "interp_dtes": [], "interp_weights": [], "method": method, "error": None}
     cache_key = underlying.replace(".", "_") + f"_h{horizon}_" + date.today().isoformat() + f"_{method}"

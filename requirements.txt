@@ -1,0 +1,13 @@
+# 核心依赖
+numpy
+pandas
+arch
+matplotlib
+yfinance
+futu_api
+
+# GARCH-GRU 混合模型（arxiv 2504.09380）
+torch
+
+# 可选：超参搜索
+optuna
